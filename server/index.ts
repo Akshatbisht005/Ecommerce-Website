@@ -20,6 +20,8 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+  app.get("/api/products", handleProducts);
+  app.post("/api/chat", handleChat);
 
   return app;
 }
