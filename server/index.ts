@@ -2,6 +2,8 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
+import { handleProducts } from "./routes/products";
+import { handleChat } from "./routes/chat";
 
 export function createServer() {
   const app = express();
