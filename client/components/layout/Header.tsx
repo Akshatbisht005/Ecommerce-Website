@@ -2,6 +2,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Search, ShoppingCart, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export default function Header() {
   const { pathname } = useLocation();
@@ -46,6 +47,7 @@ export default function Header() {
               className="bg-transparent outline-none placeholder:text-muted-foreground/70 w-40"
             />
           </div>
+          <ThemeSwitcher />
           <Button asChild variant="ghost" size="icon" aria-label="Cart">
             <Link to="/cart">
               <ShoppingCart className="size-5" />

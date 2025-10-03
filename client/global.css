@@ -137,3 +137,28 @@
     @apply bg-white/60 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-sm;
   }
 }
+
+/* Theme variants */
+.theme-ocean {
+  --primary: 199 89% 48%; /* cyan */
+  --ring: 199 89% 48%;
+  --accent: 199 89% 96%;
+}
+.theme-noir {
+  --background: 0 0% 7%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 9%;
+  --popover: 0 0% 9%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 7%;
+  --secondary: 0 0% 14%;
+  --muted: 0 0% 14%;
+  --border: 0 0% 18%;
+  --input: 0 0% 18%;
+  --ring: 0 0% 100%;
+}
+.theme-blush {
+  --primary: 343 91% 54%; /* blush pink */
+  --ring: 343 91% 54%;
+  --accent: 343 91% 96%;
+}
