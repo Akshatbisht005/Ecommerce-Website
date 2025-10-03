@@ -30,7 +30,9 @@ export default function Header() {
                 className={({ isActive }) =>
                   cn(
                     "text-sm font-medium text-foreground/70 hover:text-foreground transition",
-                    isActive || pathname === item.to ? "text-foreground" : undefined,
+                    isActive || pathname === item.to
+                      ? "text-foreground"
+                      : undefined,
                   )
                 }
               >

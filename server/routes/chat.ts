@@ -12,22 +12,29 @@ export const handleChat: RequestHandler = async (req, res) => {
   const apiKey = process.env.OPENAI_API_KEY;
   try {
     if (apiKey) {
-      const openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
+      const openaiRes = await fetch(
+        "https://api.openai.com/v1/chat/completions",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({
+            model: "gpt-4o-mini",
+            messages: [
+              {
+                role: "system",
+                content:
+                  "You are a helpful ecommerce assistant for a US-market dropshipping website called Ablis. Be concise, friendly, and on-brand.",
+              },
+              ...body.messages,
+            ],
+            temperature: 0.7,
+            max_tokens: 200,
+          }),
         },
-        body: JSON.stringify({
-          model: "gpt-4o-mini",
-          messages: [
-            { role: "system", content: "You are a helpful ecommerce assistant for a US-market dropshipping website called Ablis. Be concise, friendly, and on-brand." },
-            ...body.messages,
-          ],
-          temperature: 0.7,
-          max_tokens: 200,
-        }),
-      });
+      );
       if (!openaiRes.ok) {
         const text = await openaiRes.text();
         throw new Error(text);

@@ -44,28 +44,44 @@ export default function Index() {
                 Elevate your store with premium products built for the US market
               </h1>
               <p className="mt-5 text-lg text-muted-foreground max-w-xl">
-                Curated selection, fast shipping, and an AI shopping assistant to help your customers find the perfect products.
+                Curated selection, fast shipping, and an AI shopping assistant
+                to help your customers find the perfect products.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button className="rounded-full" asChild>
-                  <a href="#featured">Shop now <ArrowRight className="ml-2 size-4" /></a>
+                  <a href="#featured">
+                    Shop now <ArrowRight className="ml-2 size-4" />
+                  </a>
                 </Button>
                 <Button variant="secondary" className="rounded-full" asChild>
                   <a href="#chatbot">Chat with us</a>
                 </Button>
               </div>
               <div className="mt-10 grid grid-cols-3 gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2"><Truck className="size-4"/> Fast US shipping</div>
-                <div className="flex items-center gap-2"><ShieldCheck className="size-4"/> Secure checkout</div>
-                <div className="flex items-center gap-2"><Package className="size-4"/> Handpicked items</div>
+                <div className="flex items-center gap-2">
+                  <Truck className="size-4" /> Fast US shipping
+                </div>
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="size-4" /> Secure checkout
+                </div>
+                <div className="flex items-center gap-2">
+                  <Package className="size-4" /> Handpicked items
+                </div>
               </div>
             </div>
             <div className="relative">
               <div className="absolute -top-10 -left-10 hidden md:block size-72 rounded-full bg-primary/10 blur-3xl" />
               <div className="grid grid-cols-2 gap-4 md:gap-6">
                 {featured.slice(0, 4).map((p) => (
-                  <div key={p.id} className="rounded-3xl overflow-hidden border aspect-square">
-                    <img src={p.image} alt={p.title} className="h-full w-full object-cover" />
+                  <div
+                    key={p.id}
+                    className="rounded-3xl overflow-hidden border aspect-square"
+                  >
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                 ))}
               </div>
@@ -79,8 +95,12 @@ export default function Index() {
         <div className="container mx-auto container-px">
           <div className="mb-8 flex items-end justify-between">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Featured</h2>
-              <p className="text-muted-foreground">Trending products with US inventory</p>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                Featured
+              </h2>
+              <p className="text-muted-foreground">
+                Trending products with US inventory
+              </p>
             </div>
             <Button variant="ghost" className="rounded-full" asChild>
               <a href="/shop">View all</a>
@@ -96,7 +116,14 @@ export default function Index() {
           ) : (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {featured.map((p) => (
-                <ProductCard key={p.id} id={p.id} title={p.title} price={p.price} image={p.image} badge={p.badge} />
+                <ProductCard
+                  key={p.id}
+                  id={p.id}
+                  title={p.title}
+                  price={p.price}
+                  image={p.image}
+                  badge={p.badge}
+                />
               ))}
             </div>
           )}
@@ -108,15 +135,25 @@ export default function Index() {
         <div className="container mx-auto container-px grid gap-8 md:grid-cols-3">
           <div className="card p-6">
             <h3 className="font-semibold text-lg mb-1">US-focused logistics</h3>
-            <p className="text-sm text-muted-foreground">Warehouses across the US for 2-5 day delivery to your customers.</p>
+            <p className="text-sm text-muted-foreground">
+              Warehouses across the US for 2-5 day delivery to your customers.
+            </p>
           </div>
           <div className="card p-6">
-            <h3 className="font-semibold text-lg mb-1">AI shopping assistant</h3>
-            <p className="text-sm text-muted-foreground">Built-in chatbot to guide customers and boost conversions.</p>
+            <h3 className="font-semibold text-lg mb-1">
+              AI shopping assistant
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Built-in chatbot to guide customers and boost conversions.
+            </p>
           </div>
           <div className="card p-6">
-            <h3 className="font-semibold text-lg mb-1">Seamless integrations</h3>
-            <p className="text-sm text-muted-foreground">Connect your favorite payment and analytics tools easily.</p>
+            <h3 className="font-semibold text-lg mb-1">
+              Seamless integrations
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Connect your favorite payment and analytics tools easily.
+            </p>
           </div>
         </div>
       </section>
